@@ -4,7 +4,6 @@ class Solution:
 
         count = 0
         for i in range(len(citations)):
-            print(count,citations[i],i)
             if citations[i] >i:
                 count += 1
         return count
