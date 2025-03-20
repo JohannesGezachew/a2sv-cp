@@ -7,7 +7,6 @@ class Solution:
         if n == 0:
             return 1
         half = self.myPow(x, n//2)
-        print(half, n)
 
         if n%2 == 0:
             return half * half
