@@ -1,16 +1,35 @@
 class Solution:
     def sortArray(self, nums: List[int]) -> List[int]:
-        m = (max(nums)+1)
-        count = [0] * m
-        result = []
-
-        for i in range(len(nums)):
-            count[nums[i]] += 1
+        def merge(left_half,right_half) -> List[int]:
+            left, right = 0, 0
+            merged = []
+            while left < len(left_half) and right < len(right_half):
+                if left_half[left] <= right_half[right]:
+                    merged.append(left_half[left])
+                    left += 1
+                else:
+                    merged.append(right_half[right])
+                    right += 1
             
-        for index, value in enumerate(count):
-            for j in range(value):
-                result.append(index)
+            while left < len(left_half):
+                merged.append(left_half[left])
+                left += 1
+                
+            while right < len(right_half):
+                merged.append(right_half[right])
+                right += 1
+            
+            return merged
 
-        return result
+        def mergeSort(left, right, arr):
+            if left == right:
+                return[arr[left]]
+            
+            mid = (left+right)//2
+            left_value = mergeSort(left,mid,arr)
+            right_value = mergeSort(mid+1,right,arr)
+            
+            
+            return merge(left_value,right_value)
 
-
+        return mergeSort(0,len(nums)-1,nums)
