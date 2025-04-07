@@ -4,13 +4,18 @@ class Solution:
             return False
         
         target = sum(nums) // 2
-        @cache
+
+        memo = {}
+        
         def dp(idx, curr_sum):
             if idx == len(nums):
                 return curr_sum == target
             
-            return dp(idx + 1, curr_sum + nums[idx]) or dp(idx + 1, curr_sum)
+            if (idx, curr_sum) not in memo:
 
+                memo[(idx, curr_sum)] = dp(idx + 1, curr_sum + nums[idx]) or dp(idx + 1, curr_sum)
+
+            return memo[(idx, curr_sum)]
         
         return dp(0, 0)
 
