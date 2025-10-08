@@ -1,15 +1,22 @@
+class DynamicK:
+    def __init__(self, nums: List[int]):
+        self.nums = nums
+
+    def query(self, k: int) -> int:
+        ans = 0
+        T = 0
+        freq = defaultdict(int)
+        freq[0] = 1
+
+        for x in self.nums:
+            T += x
+            ans += freq[T - k]
+            freq[T] += 1
+        return ans
+
+    def add_k(self, current_k: int, delta: int) -> int:
+        return self.query(current_k + delta)
+
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
-        count = 0
-        cum_sum = 0
-        hashmap = {0: 1}
-        
-        for num in nums:
-            cum_sum += num
-            if cum_sum - k in hashmap:
-                count += hashmap[cum_sum - k]
-            if cum_sum not in hashmap:
-                hashmap[cum_sum] = 0
-            hashmap[cum_sum] += 1
-        
-        return count
+        return DynamicK(nums).query(k)
