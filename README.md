@@ -7,6 +7,7 @@ A2SV's competitive programming tracks.
 |  |
 | ------- |
 | [1895-largest-magic-square](https://github.com/JohannesGezachew/a2sv-cp/tree/master/1895-largest-magic-square) |
+| [3314-construct-the-minimum-bitwise-array-i](https://github.com/JohannesGezachew/a2sv-cp/tree/master/3314-construct-the-minimum-bitwise-array-i) |
 ## Matrix
 |  |
 | ------- |
@@ -15,4 +16,8 @@ A2SV's competitive programming tracks.
 |  |
 | ------- |
 | [1895-largest-magic-square](https://github.com/JohannesGezachew/a2sv-cp/tree/master/1895-largest-magic-square) |
+## Bit Manipulation
+|  |
+| ------- |
+| [3314-construct-the-minimum-bitwise-array-i](https://github.com/JohannesGezachew/a2sv-cp/tree/master/3314-construct-the-minimum-bitwise-array-i) |
 <!---LeetCode Topics End-->
